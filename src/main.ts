@@ -3,4 +3,10 @@ import App from "./App.vue";
 import "./registerServiceWorker";
 import router from "./router";
 
-createApp(App).use(router).mount("#app");
+const app = createApp(App);
+
+app.config.globalProperties = {
+  coreApiHost: "http://localhost:1717",
+};
+
+app.use(router).mount("#app");
